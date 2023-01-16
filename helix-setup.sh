@@ -25,11 +25,13 @@ setup_themes_languages () {
     then
         mkdir ~/.config/helix/themes
         echo "Themes directory created"
+        cp -r ~/helix/runtime/themes ~/.config/helix/
     fi
     if [ ! -d ~/.config/helix/languages ]
     then
         mkdir ~/.config/helix/languages
         echo "Languages directory created"
+        cp -r ~/helix/languages.toml ~/.config/helix/languages
     fi
 }
 
@@ -38,7 +40,8 @@ os=$( uname )
 if [ $os="Linux" ]
 then
     echo "Setting up for Linux"
-    #setup_helix
+    setup_helix
+    cp ./config.toml ~/.config/helix/
     setup_themes_languages
 else
     echo "Nothing"

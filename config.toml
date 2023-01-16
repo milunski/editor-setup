@@ -1,0 +1,14 @@
+# https://docs.helix-editor.com/configuration.html
+
+# https://github.com/helix-editor/helix/tree/master/runtime/themes
+theme = "onedark"
+
+[editor]
+rulers = [80]
+
+[editor.lsp]
+display-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
