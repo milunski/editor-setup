@@ -21,6 +21,7 @@ setup_helix () {
     echo "Helix installed!"
 }
 
+
 setup_themes_languages () {
     if [[ ! -d ~/.config/helix/themes ]]; then
         mkdir ~/.config/helix/themes
@@ -35,7 +36,14 @@ setup_themes_languages () {
 }
 
 
+setup_lsp () {
+    cd ~
+    git clone https://github.com/rust-lang/rust-analyzer.git && cd rust-analyzer
+    cargo xtask install --server
+}
+
 setup_helix
 cp ./config.toml ~/.config/helix/
 setup_themes_languages
+setup_lsp
 echo "Setup complete. Restart the shell session and run hx --health to check if the install was performed correctly."
