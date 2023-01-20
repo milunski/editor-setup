@@ -28,7 +28,7 @@ copy_languages () {
 
 
 copy_runtime_components () {
-    cp -r ~/helix/runtime/* ~/.config/helix/runtime/
+    cp -r ~/helix/runtime ~/.config/helix
 }
 
 setup_lsp () {
