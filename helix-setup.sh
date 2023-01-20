@@ -22,19 +22,14 @@ setup_helix () {
 }
 
 
-setup_themes_languages () {
-    if [[ ! -d ~/.config/helix/themes ]]; then
-        mkdir ~/.config/helix/themes
-        echo "Themes directory created"
-        cp -r ~/helix/runtime/themes ~/.config/helix/
-    fi
-    if [[ ! -d ~/.config/helix/languages ]]; then
-        mkdir ~/.config/helix/languages
-        echo "Languages directory created"
-        cp -r ~/helix/languages.toml ~/.config/helix/languages
-    fi
+copy_languages () {
+    cp -r ~/helix/languages.toml ~/.config/helix/
 }
 
+
+copy_runtime_components () {
+    cp -r ~/helix/runtime/* ~/.config/helix/runtime/
+}
 
 setup_lsp () {
     cd ~
@@ -44,6 +39,7 @@ setup_lsp () {
 
 setup_helix
 cp ./config.toml ~/.config/helix/
-setup_themes_languages
+copy_languages
+copy_runtime_components
 setup_lsp
 echo "Setup complete. Restart the shell session and run hx --health to check if the install was performed correctly."
