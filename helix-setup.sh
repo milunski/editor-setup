@@ -42,4 +42,4 @@ cp ./config.toml ~/.config/helix/
 copy_languages
 copy_runtime_components
 setup_lsp
-echo "Setup complete. Restart the shell session and run hx --health to check if the install was performed correctly."
+echo "Setup complete. Restart the shell session and run hx --health to check if the install was performed correctly. Add a config.toml to ~/.config/helix to customize."
